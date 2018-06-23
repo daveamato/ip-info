@@ -22,4 +22,4 @@ EXPOSE 8080
 # Add  "-internal-server", "8888"  to enable the pprof+metrics server
 #
 # Example:
-# CMD ["-use-x-forwarded-for", "-public", "/var/www", "-internal-server", "8888"]
+CMD ["-use-x-forwarded-for", "-public", "/var/www", "-internal-server", "8888"]

@@ -1,4 +1,4 @@
-# History of freegeoip.net
+# History of ip-info
 
 The freegeoip software is the result of a web server research project that
 started in 2009, written in Python and hosted on

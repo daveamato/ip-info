@@ -1,4 +1,4 @@
-# freegeoip - Important Announcement
+# ip-info - Important Announcement
 
 *[The old freegeoip API is now deprecated and will be discontinued on July 1st, 2018]*
 
@@ -61,7 +61,7 @@ It's very important to ensure a smooth transition to ipstack for all freegeoip A
 
 
 
-# freegeoip - Deprecated Documentation
+# ip-info - Deprecated Documentation
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

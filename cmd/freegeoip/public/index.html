@@ -87,6 +87,7 @@ angular.module("freegeoip", [function($locationProvider) {
 				<h1>{{record.country_name||'ip-info'}}</h1>
 				<h3>{{record.city}} {{record.region_name}}</h3>
 			</div>
+			<br>
 
 			<form class="form" role="form" ng-submit="submit(q)">
 				<input type="text" ng-model="q" name="q" ng-disabled="searching" class="form-control" placeholder="Search IP or hostname" autofocus>
@@ -94,7 +95,7 @@ angular.module("freegeoip", [function($locationProvider) {
 			<br/>
 			<p ng-show="searching">Searching, please wait...</p>
 			<p ng-show="error" class="label label-danger">Server returned {{error}}</p>
-			<small ng-show="rateLimit.ok&&!searching">{{rateLimit.remaining}} calls remaining, resets in {{rateLimit.expires}}<br/></small>
+			<small class="text-muted" ng-show="rateLimit.ok&&!searching">{{rateLimit.remaining}} calls remaining, resets in {{rateLimit.expires}}</small><br/>
 			<small ng-show="lastUpdated&&!searching">IP database date: {{lastUpdated}}</small><br/>
 			<table ng-hide="error||searching" class="table">
 				<tr ng-show="record.ip != q">

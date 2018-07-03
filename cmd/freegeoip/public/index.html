@@ -23,7 +23,7 @@ margin-right: auto;
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
 <script type="text/javascript">
 angular.module("freegeoip", [function($locationProvider) {
 	$locationProvider.html5Mode(true);
@@ -81,6 +81,10 @@ angular.module("freegeoip", [function($locationProvider) {
 <div class="container-fluid page">
 
 	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h1>{{record.country_name}}</h1>
+			<h3>{{record.city}} {{record.region_name}}</h3>
+		</div>
 		<div class="col-sm-6 text-justify">
 			<h4>About</h4>
 			<p>
@@ -103,13 +107,6 @@ angular.module("freegeoip", [function($locationProvider) {
 			The ip-info web server is free and open source so
 			if the public service limit is a problem for you,
 			download it and run your own instance.
-			</p>
-
-			<br/>
-
-			<p class="text-center">
-				<a href="https://github.com/daveamato/ip-info/releases/" class="btn btn-primary" target="_blank">Download</a>
-				<a href="https://github.com/daveamato/ip-info" class="btn btn-primary" target="_blank">GitHub project</a>
 			</p>
 		</div>
 
@@ -170,21 +167,6 @@ angular.module("freegeoip", [function($locationProvider) {
 
 	<hr>
 
-	<div class="row">
-		<div class="col-sm-12">
-			<h4>Support</h4>
-			<p>
-			<a href="https://github.com/daveamato/ip-info">ip-info</a> is
-			community funded, therefore consider donating if you
-			use and like it. For any other inquiries or feedback,
-			<a href="https://github.com/daveamato/" target="_blank">contact me</a>
-			directly.
-			</p>
-		</div>
-	</div> <!-- /row -->
-
-	<hr>
-
 	<h4>API</h4>
 
 	<p>The HTTP API takes GET requests in the following schema:</p>
@@ -230,12 +212,6 @@ angular.module("freegeoip", [function($locationProvider) {
 
 	<footer class="text-center">
 		<small>
-			This web site and all documentation is licensed under
-			<a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0</a>.
-			<br/>
-			This service includes GeoLite2 data created by MaxMind, available
-			from <a href="http://www.maxmind.com">maxmind.com</a>.
-			<br/>
 			&copy; 2018 ip-info
 		</small>
 	</footer>

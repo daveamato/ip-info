@@ -81,36 +81,13 @@ angular.module("freegeoip", [function($locationProvider) {
 <div class="container-fluid page">
 
 	<div class="row">
-		<div class="col-sm-12 text-center">
-			<h1>{{record.country_name}}</h1>
-			<h3>{{record.city}} {{record.region_name}}</h3>
-		</div>
-		<div class="col-sm-6 text-justify">
-			<h4>About</h4>
-			<p>
-			<a href="http://github.com/daveamato/ip-info/">ip-info</a>
-			provides a public HTTP API for software developers
-			to search the geolocation of IP addresses. It uses
-			a database of IP addresses that are associated to
-			cities along with other relevant information like
-			time zone, latitude and longitude.
-			</p>
-
-			<p>
-			You're allowed up to <big>10,000</big> queries per
-			hour by default. Once this limit is reached, all of
-			your requests will result in HTTP 403, forbidden,
-			until your quota is cleared.
-			</p>
-
-			<p>
-			The ip-info web server is free and open source so
-			if the public service limit is a problem for you,
-			download it and run your own instance.
-			</p>
-		</div>
 
 		<div class="col-sm-6" ng-controller="queryController">
+			<div class="col-sm-12 text-center">
+				<h1>{{record.country_name||'ip-info'}}</h1>
+				<h3>{{record.city}} {{record.region_name}}</h3>
+			</div>
+
 			<form class="form" role="form" ng-submit="submit(q)">
 				<input type="text" ng-model="q" name="q" ng-disabled="searching" class="form-control" placeholder="Search IP or hostname" autofocus>
 			</form>
@@ -155,9 +132,7 @@ angular.module("freegeoip", [function($locationProvider) {
 				<tr>
 					<td>Time zone</td>
 					<td>
-						<a href="http://en.wikipedia.org/wiki/{{record.time_zone}}" ng-show="record.time_zone" target="_blank">
-							{{record.time_zone}}
-						</a>
+						<a href="http://en.wikipedia.org/wiki/{{record.time_zone}}" ng-show="record.time_zone" target="_blank">{{record.time_zone}}</a>
 					</td>
 				</tr>
 			</table>
@@ -165,6 +140,34 @@ angular.module("freegeoip", [function($locationProvider) {
 
 	</div> <!-- /row -->
 
+	<hr>
+	
+	
+		<div class="col-sm-6 text-justify">
+			<h4>About</h4>
+			<p>
+			<a href="http://github.com/daveamato/ip-info/" target="_blank">ip-info</a>
+			provides a public HTTP API for software developers
+			to search the geolocation of IP addresses. It uses
+			a database of IP addresses that are associated to
+			cities along with other relevant information like
+			time zone, latitude and longitude.
+			</p>
+
+			<p>
+			You're allowed up to <big>10,000</big> queries per
+			hour by default. Once this limit is reached, all of
+			your requests will result in HTTP 403, forbidden,
+			until your quota is cleared.
+			</p>
+
+			<p>
+			The ip-info web server is free and open source so
+			if the public service limit is a problem for you,
+			download it and run your own instance.
+			</p>
+		</div>
+		
 	<hr>
 
 	<h4>API</h4>
